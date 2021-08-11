@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    {% include "main/head.html" %}
+
+    <body>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        {% include "main/desktop_navbar.html" %}
+
+        {% include "main/mobile_bar.html" %}
+
+        {% include "main/mobile_nav.html" %}
+
+        {% block content %}
+          
+        {% endblock content %}
+
+        <section class="social-but">
+            <div class="container-fluid">
+                <a href="#"><img src="{% static 'fonts/svg/facebook.svg' %}" alt=""></a>
+                <a href="#"><img src="{% static 'fonts/svg/instagram.svg' %}" alt=""></a>
+                <a href="#"><img src="{% static 'fonts/svg/twitter.svg' %}" alt=""></a>
+                <a class='noona'><img src="{% static 'fonts/svg/bank.svg' %}" alt=""></a>
+                <a><img src="{% static 'fonts/svg/bank.svg' %}" alt=""></a>
+                <a><img src="{% static 'fonts/svg/bank.svg' %}" alt=""></a>
+                <a><img src="{% static 'fonts/svg/bank.svg' %}" alt=""></a>
+                <a><img src="{% static 'fonts/svg/bank.svg' %}" alt=""></a>
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="container-fluid">
+                <div class="row py-3">
+                    <div class="col-sm-3">
+                        <h5>HELP & INFORMATION</h5>
+                        <ul>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>about wellbos</h5>
+                        <ul>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>more form wellbos</h5>
+                        <ul>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>shopping from:</h5>
+                        <ul>
+                            <a href="#">You are in Mumbai</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="credit">
+            <div class="container-fluid">
+                <p>© 2021 WELLBOS</p>
+                <p class="links">
+                    <a href="#">Privacy & Cookies</a>
+                    <a href="#">Ts&Cs</a>
+                    <a href="#">Accessibility</a>
+                </p>
+            </div>
+        </section>
+
+    
+        {% include "main/scripts.html" %}
+    </body>
+
+</html>
