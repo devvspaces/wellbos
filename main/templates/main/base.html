@@ -7,6 +7,14 @@
     <body>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+
         {% include "main/desktop_navbar.html" %}
 
         {% include "main/mobile_bar.html" %}

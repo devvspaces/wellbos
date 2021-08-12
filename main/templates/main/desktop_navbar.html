@@ -1,413 +1,95 @@
 {% load static %}
-<nav>
+{% load wellbostags %}
+<nav id="desktop-nav">
     <div class="container-fluid">
         <div class="navbar">
-            <a href="#" class="navbar-brand">
+            <a href="{% url 'main:home' %}" class="navbar-brand">
                 <img src="{% static 'images/logo1.png' %}" alt="" class="img-fluid">
             </a>
 
             <div id="desktop_nav">
-                <div class='nav_box men'>
-                    <a href="#" class="nav_link">Men</a>
-                    <div class="nav_backdrop">
-                        <div class="dropdown_container">
-                            <div class="dropdown">
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
+                {% get_category as v %}
+                {% for i in v %}
+                    <div class='nav_box men'>
+                        <a href="{{ i.get_absolute_url }}" class="nav_link">{{i.name}}</a>
+                        <div class="nav_backdrop">
+                            <div class="dropdown_container">
+                                <div class="dropdown">
+                                    <ul>
+                                        <li class="special"><a href="#">Indian & Fusion Wear</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
 
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
+                                        <hr>
+                                        <li class="special"><a href="#">Belts, Scarves & More</a></li>
+                                        <li class="special"><a href="#">Watches & Wearables</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="special"><a href="#">Indian & Fusion Wear</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
 
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
+                                        <hr>
+                                        <li class="special"><a href="#">Belts, Scarves & More</a></li>
+                                        <li class="special"><a href="#">Watches & Wearables</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="special"><a href="#">Indian & Fusion Wear</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
 
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
+                                        <hr>
+                                        <li class="special"><a href="#">Belts, Scarves & More</a></li>
+                                        <li class="special"><a href="#">Watches & Wearables</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="special"><a href="#">Indian & Fusion Wear</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
 
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
+                                        <hr>
+                                        <li class="special"><a href="#">Belts, Scarves & More</a></li>
+                                        <li class="special"><a href="#">Watches & Wearables</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="special"><a href="#">Indian & Fusion Wear</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
+                                        <li><a href="#">Test 1</a></li>
 
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
+                                        <hr>
+                                        <li class="special"><a href="#">Belts, Scarves & More</a></li>
+                                        <li class="special"><a href="#">Watches & Wearables</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class='nav_box women'>
-                    <a href="#" class="nav_link">Women</a>
-                    <!-- Dropdowns -->
-                    <div class="nav_backdrop">
-                        <div class="dropdown_container">
-                            <div class="dropdown">
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='nav_box kids'>
-                    <a href="#" class="nav_link">Kids</a>
-                    <!-- Dropdowns -->
-                    <div class="nav_backdrop">
-                        <div class="dropdown_container">
-                            <div class="dropdown">
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='nav_box home_l'>
-                    <a href="#" class="nav_link men">Home & Living</a>
-                    <div class="nav_backdrop">
-                        <div class="dropdown_container">
-                            <div class="dropdown">
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='nav_box beauty'>
-                    <a href="#" class="nav_link men">Beauty</a>
-                    <div class="nav_backdrop">
-                        <div class="dropdown_container">
-                            <div class="dropdown">
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="special"><a href="#">Indian & Fusion Wear</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-                                    <li><a href="#">Test 1</a></li>
-
-                                    <hr>
-                                    <li class="special"><a href="#">Belts, Scarves & More</a></li>
-                                    <li class="special"><a href="#">Watches & Wearables</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
 

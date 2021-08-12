@@ -18,15 +18,14 @@
             </div>
             {% endfor %}
         {% endif %}
+        
 
-        <form action="" method="post">
-            {% csrf_token %}
-            <h3>Reset password</h3>
-            
-            {{ form }}
-
-            <button name="submit">sign in</button>
-        </form>
+        <h3>Your Category Sub List: {{ title }}</h3>
+        <ul>
+            {% for i in sublist %}
+                <li><a href="{% url 'product:product-list' category i.slug %}">{{ i.name }}</a></li>
+            {% endfor %}
+        </ul>
 
         
   </body>

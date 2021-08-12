@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <!-- <meta name="Keywords" content="KEYWORDS HERE (SEPERATE WITH COMMA)" lang="en" xml:lang="en"> -->
+      <!-- <meta name="Description" content="DESCRIPTION HERE" lang="en" xml:lang="en"> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>{{ title }}</title>
+  </head>
+
+  <body>
+
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{message}}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <h3>Login here</h3>
+            
+            {{ login }}
+
+            <button name="submit" value="login">sign in</button>
+        </form>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <h3>Signup here</h3>
+            
+            
+            {{ register }}
+
+            <button name="submit" value="register">register</button>
+        </form>
+
+        
+  </body>
+
+</html>

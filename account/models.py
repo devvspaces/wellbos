@@ -2,11 +2,12 @@ import uuid
 
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-from django.core.mail import send_mail
 from django.db import models
 from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
 from django.urls import reverse
+
+from .utils import send_email
 
 
 class UserManager(BaseUserManager):
@@ -65,7 +66,6 @@ class User(AbstractBaseUser):
     def username(self):
         return self.profile.username
     
-    @property
     def get_emailname(self):
         # Return the x part of an email e.g [x]@gmail.com
         return self.email.split('@')[0]
@@ -77,9 +77,7 @@ class User(AbstractBaseUser):
     #     return reverse('profile', kwargs = [self.id])
 
     def email_user(self, subject, message, fail=True):
-        print(message)
-        val = send_mail(subject=subject, message=message, from_email=settings.DEFAULT_FROM_EMAIL, recipient_list=[self.email], fail_silently=fail)
-        return True if val else False
+        return send_email(self.email, subject, message, fail)
 
     @property
     def is_active(self):
@@ -114,6 +112,17 @@ class Profile(models.Model):
     #     return reverse('profile', args=[self.first_name])
 
 
+
+class GuestUser(models.Model):
+    uid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.uid)
+
+
+# Signals
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     profile = Profile.objects.get_or_create(user=instance)
