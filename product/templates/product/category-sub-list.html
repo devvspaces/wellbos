@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-      <meta charset="utf-8">
-      <!-- <meta name="Keywords" content="KEYWORDS HERE (SEPERATE WITH COMMA)" lang="en" xml:lang="en"> -->
-      <!-- <meta name="Description" content="DESCRIPTION HERE" lang="en" xml:lang="en"> -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'main/base.html' %}
+{% load static %}
 
-      <title>{{ title }}</title>
-  </head>
-
-  <body>
-
-        {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{message}}
+{% block content %}
+<section class="sub-categories my-5">
+    <div class="container-fluid">
+        <h3 class="my-2 text-center mb-5">{{ title }} wears</h3>
+        <div class="row justify-content-center mt-4">
+            {% for i in sublist %}
+            <div class="col-sm-4 text-center">
+                <a href="{% url 'product:product-list' category i.slug %}">
+                    <img src="{{ i.image.url }}" alt="" class="img-fluid">
+                    <h5 class="mt-2">{{ i.name.upper }}</h5>
+                    <p>{{ i.desc }}</p>
+                </a>
             </div>
             {% endfor %}
-        {% endif %}
-        
-
-        <h3>Your Category Sub List: {{ title }}</h3>
-        <ul>
-            {% for i in sublist %}
-                <li><a href="{% url 'product:product-list' category i.slug %}">{{ i.name }}</a></li>
-            {% endfor %}
-        </ul>
-
-        
-  </body>
-
-</html>
+        </div>
+    </div>
+</section>
+{% endblock content %}
