@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-g$7j2a$@dqq+ewy8v2xgnpvi#royegna7b^xrfmty%d3hwbpwb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.105.40.42', 'wellbos.com', 'www.wellbos.com']
+ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
@@ -66,24 +66,12 @@ WSGI_APPLICATION = 'wellbos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'wellbosdb',
-            'USER': 'wellbosx1',
-            'PASSWORD': 'driping@#$AD',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
+}
 
 
 # Password validation
@@ -123,8 +111,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"),
 ]
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
