@@ -357,7 +357,7 @@ section.credit div p a:nth-child(2){
         display: none;
     }
     #mobile-nav, #mobile-bar{
-        display: flex;
+        display: flex !important;
     }
     .products-pics-box {
         max-width: 100%;

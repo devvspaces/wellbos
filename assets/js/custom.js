@@ -31,6 +31,10 @@ $(document).ready(function(){
 		}
 	})
 
+	// $('.nav_backdrop').on('blur', function(e) {
+	// 	// $(this.parentElement).removeClass('active')
+	// })
+
 	function resetView(){
 		if (window.innerWidth > 627){
 			$("#desktop").css('display', 'block')
@@ -50,8 +54,10 @@ $(document).ready(function(){
 		e.preventDefault()
 		if ($('.product-description').hasClass('active')){
 			$('.product-description').removeClass('active')
+			$('.show-more a').text('show less')
 		} else {
 			$('.product-description').addClass('active')
+			$('.show-more a').text('show more')
 		}
 	})
 })

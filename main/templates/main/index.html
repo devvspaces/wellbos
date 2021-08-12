@@ -6,6 +6,14 @@
 
     <body>
 
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+
         <div id='desktop'>
 
             {% include "main/desktop_navbar.html" %}
@@ -226,7 +234,7 @@
                                 <form action="">
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">
-                                            <img src="{% static 'fonts/svg/envelope.svg" alt="">
+                                            <img src="{% static 'fonts/svg/envelope.svg' %}" alt="">
                                         </span>
                                         <input type="email" placeholder="Enter your email">
                                     </div>

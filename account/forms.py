@@ -14,10 +14,10 @@ class ResetPasswordValidateEmailForm(forms.Form):
     def clean_email(self):
         email = self.data.get('email')
         validate_email(email)
-        try:
-            user = User.objects.get(email=email)
-        except User.DoesNotExist as e:
-            raise forms.ValidationError("Email user matched no account")
+        # try:
+        #     return User.objects.get(email=email)
+        # except User.DoesNotExist as e:
+        #     raise forms.ValidationError("Email user matched no account")
         
         return email
 
@@ -105,7 +105,7 @@ class UserRegisterForm(forms.ModelForm):
     confirm_password=forms.CharField(label="Confirm password",
                             widget=forms.PasswordInput,
                             help_text='Must be similar to first password to pass verification')
-    username = forms.CharField(max_length=200)
+    # username = forms.CharField(max_length=200)
 
     class Meta:
         model=User
@@ -125,13 +125,13 @@ class UserRegisterForm(forms.ModelForm):
             raise forms.ValidationError("Confirm password does not match with above password")
         return ps2
     
-    def clean_username(self):
-        username = self.cleaned_data.get('username')
+    # def clean_username(self):
+    #     username = self.cleaned_data.get('username')
 
-        if Profile.objects.filter(username__exact=username).exists():
-            raise forms.ValidationError('Username has already been used')
+    #     if Profile.objects.filter(username__exact=username).exists():
+    #         raise forms.ValidationError('Username has already been used')
         
-        return username
+    #     return username
 
     """ Override the default save method to use set_password method to convert text to hashed """
     def save(self, commit=True):
@@ -142,8 +142,8 @@ class UserRegisterForm(forms.ModelForm):
             user.save()
             # User profile is already created with user creation signal ( code is in the models.py )
             # Now we can access this newly created profile to update the username information
-            user.profile.username = self.cleaned_data.get("username")
-            user.profile.save()
+            # user.profile.username = self.cleaned_data.get("username")
+            # user.profile.save()
 
         return user
 
